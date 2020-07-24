@@ -1,0 +1,8 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+     HashSet hs=new HashSet<>();
+      hs.add(nums);
+      int i= hs.size();
+      return i;
+    }
+}
