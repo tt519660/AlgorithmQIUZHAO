@@ -1,0 +1,30 @@
+import java.util.*;
+public class test {
+	public static void main(String[] args)
+    {
+		int []nums={2,7,3,5,8};
+		int[] d=twoSum(nums,9);
+		for(int a:d){
+			System.out.print(a);
+		}
+    }
+    public static int[] twoSum(int[] nums, int target) {
+    	int [] b=new int[2];
+    	int k=0;
+    	for(int i=0;i<nums.length;i++){
+    		for(int j=i+1;j<nums.length;j++){
+    			if(nums[i]+nums[j]==target){
+    				b[k++]=nums[i];
+    				b[k]=nums[j];
+    				break;
+    			}
+    		}
+    		
+    	}
+    	
+		return b;
+        
+    }	
+}
+
+

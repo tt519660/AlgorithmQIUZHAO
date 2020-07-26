@@ -1,0 +1,26 @@
+import java.util.*;
+public class test {
+	public static void main(String[] args)
+    {
+		String[] st={"qwe","ewq","wqe","asd","sad","zxc"};
+		List<List<String>> s= groupAnagrams(st);
+		for(List ss:s){
+			System.out.print(ss);
+		}
+    }
+	 public static List<List<String>> groupAnagrams(String[] strs) {
+		 HashMap<String,List>mp=new HashMap();
+		 for(String st:strs){
+			char[]s= st.toCharArray();
+			 Arrays.sort(s);
+			 String key=String.valueOf(s);
+			 if(!mp.containsKey(key)){
+				 //’“≤ªµΩkey
+				 mp.put(key, new ArrayList());
+			 }
+				 mp.get(key).add(st);
+			 	 
+		 } 
+		return new ArrayList(mp.values());
+	    }
+}

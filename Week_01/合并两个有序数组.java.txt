@@ -1,0 +1,12 @@
+class Solution {
+  
+public void merge(int[] nums1, int m, int[] nums2, int n)
+ {
+    
+//把数组nums2从0-n复制到数组nums1的m位置后面
+System.arraycopy(nums2, 0, nums1, m, n);
+ 
+   Arrays.sort(nums1);
+ 
+ }
+}
