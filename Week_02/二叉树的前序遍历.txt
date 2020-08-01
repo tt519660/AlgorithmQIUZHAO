@@ -1,0 +1,20 @@
+class Solution {
+     public List<Integer> preorderTraversal(TreeNode root) {
+     //×ó¸ùÓÒ
+     List<TreeNode> li=new ArrayList();
+     List tt=inOrderTree(root,li);
+     return tt;
+    }
+    public List<Integer> inOrderTree (TreeNode root,List li){
+    if(root!=null){
+        li.add(root.val);
+      if(root.left!=null){
+      inOrderTree(root.left,li);
+      }
+    if(root.right!=null){
+      inOrderTree(root.right,li);
+      }
+    }
+   return li;
+    }
+}

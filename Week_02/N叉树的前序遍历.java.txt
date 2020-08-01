@@ -1,0 +1,17 @@
+class Solution {
+    List<Integer> ls;
+    public List<Integer> preorder(Node root) {
+        ls=new ArrayList();
+        dfs(root);
+        return ls;
+    }
+    public void dfs(Node root){
+    if(root==null){
+     return ;
+    }
+    ls.add(root.val);
+    for(Node s:root.children){
+        dfs(s);
+    }
+    }
+}
