@@ -1,0 +1,29 @@
+class Solution {
+    List<List<Integer>>res=new ArrayList();
+    
+    public List<List<Integer>> permuteUnique(int[] nums) {
+   int [] stk=new int[nums.length];
+    Arrays.sort(nums);
+    po(nums,new ArrayList<Integer>(),stk);
+    return res;
+    }
+
+    public void po(int[] nums, ArrayList<Integer> List,int [] stk ) {
+    if(List.size()==nums.length){
+      res.add(new ArrayList(List));
+    }
+    for(int i=0;i<nums.length;i++){
+    if(stk[i]==1){
+    continue;
+    }
+      if (i > 0 && nums[i] == nums[i - 1] && stk[i - 1]==0) {
+            continue;
+            }
+    stk[i]=1;
+      List.add(nums[i]);
+      po(nums,List,stk);
+      stk[i]=0;
+      List.remove(List.size()-1);
+    }
+    }
+}

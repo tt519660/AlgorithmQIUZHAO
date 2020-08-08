@@ -1,0 +1,16 @@
+class Solution {
+    List<List<Integer>> res=new ArrayList();
+
+    public List<List<Integer>> subsets(int[] nums) {
+      backtry(nums,new ArrayList(),0);
+      return res;
+    }
+    public void backtry(int[] nums,ArrayList<Integer> List,int first) {
+     res.add(new ArrayList(List));
+     for(int i=first;i<nums.length;i++){
+       List.add(nums[i]);
+       backtry(nums,List,i+1);
+       List.remove(List.size()-1);
+     }
+    }
+    }

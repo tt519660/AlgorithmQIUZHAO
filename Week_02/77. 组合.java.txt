@@ -1,0 +1,21 @@
+class Solution {
+    List<List<Integer>> res=new ArrayList();
+    public  List<List<Integer>> combine(int n, int k){
+     
+     po(n,k,1,new LinkedList());
+     return res;
+    }
+    public void po(int n, int k,int first,LinkedList<Integer> List) {
+  
+     if(List.size()==k){
+     res.add(new LinkedList(List));
+     }
+
+     for(int i=first;i<n+1;i++){
+
+     List.add(i);
+     po(n,k,i+1,List);
+     List.removeLast();
+     }
+    }
+}
