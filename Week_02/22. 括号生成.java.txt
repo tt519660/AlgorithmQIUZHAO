@@ -1,0 +1,26 @@
+class Solution {
+    List<String> res=new LinkedList();
+    public List<String> generateParenthesis(int n) {
+     
+    ren(n,0,0, new StringBuilder());
+    return res;
+    }
+    //»ØËİ·¨
+    public void ren(int n,int left,int right,StringBuilder cur){
+       if(cur.length()==n*2){
+        res.add(cur.toString());
+        return;
+       }
+       if(left<n){
+        cur.append("(");
+        //»ØËİ
+        ren(n,left+1,right,cur);
+        cur.deleteCharAt(cur.length()-1);
+       }
+       if(right<left){
+         cur.append(")");
+         ren(n,left,right+1,cur);
+         cur.deleteCharAt(cur.length()-1);
+       }
+    }
+}
