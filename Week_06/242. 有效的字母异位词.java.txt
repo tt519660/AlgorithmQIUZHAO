@@ -1,0 +1,14 @@
+class Solution {
+    public boolean isAnagram(String s, String t) {
+//变成数组，sort排序，判断是否相等
+char [] k=s.toCharArray();
+char [] f=t.toCharArray();
+Arrays.sort(f);
+Arrays.sort(k);
+if(String.valueOf(f).equals(String.valueOf(k)))
+{
+    return true ;
+}
+return false;
+    }
+}

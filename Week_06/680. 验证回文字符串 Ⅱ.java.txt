@@ -1,0 +1,20 @@
+class Solution {
+    public boolean validPalindrome(String s) {
+     char[] str=s.toCharArray();
+     for(int i=0,j=s.length()-1;i<j;i++,j--){
+       if(str[i]!=str[j]){
+       return trybalid(s,i+1,j)||trybalid(s,i,j-1);
+       }
+     }
+     return true;
+    }
+    public boolean trybalid(String s,int i,int j ){
+         char[] str=s.toCharArray();
+     while(i<j){
+      if(str[i]!=str[j]){
+       return false;
+      }
+     }
+     return true;
+    }
+}
