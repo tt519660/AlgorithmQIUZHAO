@@ -1,0 +1,18 @@
+class Solution {
+    public int climbStairs(int n) {
+    
+    if(n<=2){
+      return n;
+    }
+    int sum=0;
+    int first=1;
+    int secend=2;
+    while(n-->2){
+    
+    sum=first+secend;
+    first=secend;
+    secend=sum;
+    }
+    return sum;
+    }
+}
