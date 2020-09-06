@@ -11,15 +11,23 @@
 多数元素：
 
  public int majorityElement(int[] nums) {
+ 
     HashMap<Integer ,Integer >mp=new HashMap();
+    
     for(int st:nums){
+    
       if(!mp.containsKey(st)){
+      
         mp.put(st,1);
+        
       }
+      
         mp.put(st,mp.get(st)+1);
+        
     }
     int sum=0;
     int key=0;
+    
     //循环出最大的值，获取key
     for(Map.Entry<Integer,Integer> sk:mp.entrySet()){
         if(sk.getValue()>sum){
