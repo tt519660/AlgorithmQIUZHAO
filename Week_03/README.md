@@ -7,7 +7,9 @@
 第五遍：面试前
 
 关于使用HashMap的经典题目：
+
 多数元素：
+
  public int majorityElement(int[] nums) {
     HashMap<Integer ,Integer >mp=new HashMap();
     for(int st:nums){
@@ -27,6 +29,7 @@
     }
      return key;
     }
+    
     总结：一般如果一个数组中有多个元素，并且要使用到多个元素或者比较个数之类的题目，
     可以考虑使用map,因为它是key-value的形式保持数据。通过containskey可以看map中
     是否已经有这个元素，通过map.entrySet()方法，查看key-value
